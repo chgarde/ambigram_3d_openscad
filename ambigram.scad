@@ -6,13 +6,14 @@ Instructions :
  - both texts must be the same length
  - put underscores for an empty letter 
 */
-text1="LOUFABILOUB";
-text2="MAKERSPACE_";
+text1="LOVE";
+text2="HATE";
 
 font="UbuntuMono"; // font name
 size=30; // font size
 width=24; // character width
 rounded_diam=4; // rounding sphere diameter.
+enable_rounding=false; // set to true to have rounded letters (takes longer)
 
 n=len(text1);
 
@@ -69,11 +70,16 @@ module letters(){
 
 // add some minkowski to have rounded letters
 module ambigram(){
-    minkowski(){
-    letters();
-        sphere(d=rounded_diam);
+    if (enable_rounding){
+        minkowski(){
+            letters();
+            sphere(d=rounded_diam);
+        }
+    }else{
+        letters();
     }
 }
+
 
 // animate for fun
 rotate([0,0,-45+45*sin($t*360)]){
