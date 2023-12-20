@@ -6,8 +6,8 @@ Instructions :
  - both texts must be the same length
  - put underscores for an empty letter 
 */
-text1="LOVE";
-text2="HATE";
+text1="LOUFABILOUB";
+text2="MAKERSPACE_";
 
 font="UbuntuMono"; // font name
 size=30; // font size
